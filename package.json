@@ -1,0 +1,49 @@
+{
+  "name": "@marchev/claudit",
+  "version": "0.1.14",
+  "description": "MCP server for searching Solodit smart contract security findings",
+  "type": "module",
+  "bin": {
+    "claudit": "dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "solodit",
+    "smart-contracts",
+    "security",
+    "auditing",
+    "claude-code"
+  ],
+  "author": "Martin Marchev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marchev/claudit.git"
+  },
+  "homepage": "https://github.com/marchev/claudit",
+  "bugs": {
+    "url": "https://github.com/marchev/claudit/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.50",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}
