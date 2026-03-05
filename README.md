@@ -144,6 +144,21 @@ codex mcp add solodit \
   -- npx -y @marchev/claudit
 ```
 
+**Cursor MCP**
+```json
+{
+  "mcpServers": {
+    "solodit": {
+      "command": "npx",
+      "args": ["-y", "@marchev/claudit"],
+      "env": {
+        "SOLODIT_API_KEY": "sk_new_key"
+      }
+    }
+  }
+}
+```
+
 </details>
 
 <details>
