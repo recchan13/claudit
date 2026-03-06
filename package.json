@@ -1,6 +1,6 @@
 {
   "name": "@marchev/claudit",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "MCP server for searching Solodit smart contract security findings",
   "type": "module",
   "bin": {
